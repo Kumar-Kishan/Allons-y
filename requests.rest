@@ -1,4 +1,10 @@
 @url = http://127.0.0.1:3000/
+//@url = https://allons-y.herokuapp.com/
+###
+GET {{url}}posts/mock?count=10000
 
 ###
-GET {{url}}posts
+GET {{url}}posts?perPage=10
+
+###
+GET {{url}}posts/count

@@ -7,7 +7,7 @@ class PostController extends ResourceController {
 		super(model)
 	}
 
-	mock(req,res) {
+	mock(req, res) {
 		let fakeData = []
 		console.log(req.query)
 		for (let index = 0; index < req.query.count; index++) {
@@ -20,6 +20,14 @@ class PostController extends ResourceController {
 						Faker.address.latitude(),
 					],
 				},
+				attributes: {
+					foodie: Math.random(),
+					religious: Math.random(),
+					thrilling: Math.random(),
+					chilling: Math.random(),
+					trekking: Math.random(),
+					entertainment: Math.random()
+				}
 			})
 		}
 

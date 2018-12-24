@@ -1,27 +1,30 @@
-import {Schema, model as Model} from "mongoose"
+import { Schema, model as Model } from "mongoose"
+import AttributeSchema from "./schemas/attributes"
 
-let PostSchema  = Schema({
-	"url" : {
+
+let PostSchema = Schema({
+	url: {
 		type: String,
-		required: true
+		required: true,
 	},
-	"text" : {
+	text: {
 		type: String,
 		required: false,
 	},
-	"location" : {
-		type : {
+	location: {
+		type: {
 			type: String,
-			default: "Point"
+			default: "Point",
 		},
-		coordinates: [Number]
+		coordinates: [Number],
 	},
-	"fistbumps" : {
+	fistbumps: {
 		type: Number,
-		default: 0
-	}
+		default: 0,
+	},
+	attributes: AttributeSchema,
 })
 
-PostSchema.index({location: "2dsphere"})
+PostSchema.index({ location: "2dsphere" })
 
 export default Model("Post", PostSchema, "posts")

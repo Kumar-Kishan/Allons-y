@@ -1,27 +1,27 @@
-import {Schema, model as Model} from "mongoose"
+import { Schema, model as Model } from "mongoose"
 
-let IdentitySchema  = Schema({
-	"deviceName" : {
+let IdentitySchema = Schema({
+	deviceName: {
 		type: String,
-		required: false
+		required: false,
 	},
-	"uniqueIdentifier" : {
+	uniqueIdentifier: {
 		type: String,
-		required: true
+		required: true,
 	},
-	"identifierType" : {
+	identifierType: {
 		type: String,
-		required: true
+		required: true,
 	},
-	"location" : {
-		type : {
+	location: {
+		type: {
 			type: String,
-			default: "Point"
+			default: "Point",
 		},
-		coordinates: [Number]
+		coordinates: [Number],
 	},
 })
 
-IdentitySchema.index({location: "2dsphere"})
+IdentitySchema.index({ location: "2dsphere" })
 
 export default Model("Identity", IdentitySchema, "identities")
