@@ -4,7 +4,7 @@
 GET {{url}}posts/mock?count=10000
 
 ###
-GET {{url}}posts?perPage=10
+GET {{url}}posts?count=10&skip=12
 
 ###
 GET {{url}}posts/count
