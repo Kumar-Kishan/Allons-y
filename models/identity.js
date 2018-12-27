@@ -20,6 +20,15 @@ let IdentitySchema = Schema({
 		},
 		coordinates: [Number],
 	},
+	ipAddresses: [{
+		address: {
+			type: String
+		},
+		accessTime: {
+			type: Date,
+			default: Date.now
+		}
+	}]
 })
 
 IdentitySchema.index({ location: "2dsphere" })

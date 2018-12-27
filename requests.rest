@@ -1,10 +1,22 @@
-@url = http://127.0.0.1:3000/
-//@url = https://allons-y.herokuapp.com/
+//@url = http://127.0.0.1:3000/
+@url = https://allons-y.herokuapp.com/
+
 ###
 GET {{url}}posts/mock?count=10000
 
 ###
-GET {{url}}posts?count=10&skip=12
+GET {{url}}posts?skip=12&count=23
 
 ###
 GET {{url}}posts/count
+
+###
+POST {{url}}/identity HTTP/1.1
+Content-Type: application/json
+
+{
+	"payload" : {
+		"imei" : "12345678990",
+		"deviceName" : "ACER R5-471T"
+	}
+}

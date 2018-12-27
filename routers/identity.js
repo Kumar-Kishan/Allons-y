@@ -1,8 +1,9 @@
 import { Router } from "express"
-import PostRouter from "./post"
+//import { Request } from "../middlewares"
+
 
 let router = new Router()
 
-router.use("/posts", PostRouter)
+// router.post("/", )
 
 export default router
