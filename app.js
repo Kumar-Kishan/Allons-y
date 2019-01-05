@@ -9,7 +9,7 @@ let listener = app.listen(process.env.PORT || 3000, () => {
 app.enable("trust proxy")
 app.use(Express.json())
 
-//app.use("/", Express.static("public"))
+app.use("/", Express.static("public"))
 
 require("dotenv").config()
 require("./app/mongo")

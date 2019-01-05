@@ -14,6 +14,7 @@ let IdentitySchema = Schema({
 		required: true,
 	},
 	location: {
+		required: false,
 		type: {
 			type: String,
 			default: "Point",

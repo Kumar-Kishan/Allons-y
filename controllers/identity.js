@@ -7,5 +7,4 @@ class IdentityController extends ResourceController{
 	}
 }
 
-
 export default new IdentityController(Identity)

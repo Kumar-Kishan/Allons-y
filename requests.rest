@@ -1,22 +1,46 @@
-//@url = http://127.0.0.1:3000/
-@url = https://allons-y.herokuapp.com/
+@url = http://127.0.0.1:3000/
+//@url = https://allons-y.herokuapp.com/
+
+//Resources
+@post = posts
+@identity = identities
 
 ###
-GET {{url}}posts/mock?count=10000
+GET {{url}}{{post}}/mock?count=10000
 
 ###
-GET {{url}}posts?skip=12&count=23
+GET {{url}}{{post}}?skip=12&count=23
 
 ###
-GET {{url}}posts/count
+GET {{url}}{{post}}/count
+
 
 ###
-POST {{url}}/identity HTTP/1.1
+GET {{url}}{{identity}}
+
+###
+POST {{url}}identities
 Content-Type: application/json
 
 {
 	"payload" : {
-		"imei" : "12345678990",
+		"imei" : "123dsjkhd45678990",
 		"deviceName" : "ACER R5-471T"
 	}
 }
+
+###
+POST {{url}}{{identity}}/query
+Content-Type: application/json
+
+{
+	"query" : {
+		"uniqueIdentifier" : {
+			"$regex" : "345",
+			"$options" : "mi"
+		}
+	}
+}
+
+###
+
