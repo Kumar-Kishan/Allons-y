@@ -4,10 +4,14 @@
 //Resources
 @post = posts
 @identity = identities
+@user = users
 
 ###
 GET {{url}}{{post}}/mock?count=10000
 
+
+###
+//GET {{url}}{{user}}/mock?count=100
 ###
 GET {{url}}{{post}}?skip=12&count=23
 

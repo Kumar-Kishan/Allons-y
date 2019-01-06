@@ -18,6 +18,10 @@ let PostSchema = Schema({
 		},
 		coordinates: [Number],
 	},
+	author: {
+		type: Schema.Types.ObjectId,
+		ref: "User"
+	},
 	fistbumps: {
 		type: Number,
 		default: 0,

@@ -12,7 +12,10 @@ export default {
 		for(let key in req.query){
 			req.body[key] = req.query[key]
 		}
-
+		next()
+	},
+	SetupPopulation: (req,res,next) => {
+		req.body.populates = []
 		next()
 	}
 }
