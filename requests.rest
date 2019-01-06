@@ -28,7 +28,6 @@ Content-Type: application/json
 
 {
 	"payload" : {
-		"imei" : "123dsjkhd45678990",
 		"deviceName" : "ACER R5-471T"
 	}
 }
