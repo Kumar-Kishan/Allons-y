@@ -2,6 +2,7 @@ import ResourceController from "../lib/resource_controller"
 import Users from "../models/users"
 import Posts from "../models/posts"
 import Faker from "faker/locale/en"
+import foodporn from "../data/foodporn.json"
 
 class UserController extends ResourceController{
 	constructor(model){
@@ -9,6 +10,7 @@ class UserController extends ResourceController{
 	}
 
 	mock(req,res) {
+
 		let fakeData = []
 		console.log(req.query)
 		let doneCount  = 0
@@ -27,12 +29,12 @@ class UserController extends ResourceController{
 				email : Faker.internet.email(),
 				password: "",
 				attributes: {
-					foodie: Math.random(),
-					religious: Math.random(),
-					thrilling: Math.random(),
-					chilling: Math.random(),
-					trekking: Math.random(),
-					entertainment: Math.random()
+					foodie: (Math.random() / 2)  + 0.5,
+					religious: Math.random() / 10,
+					thrilling: Math.random() / 10,
+					chilling: Math.random() / 10,
+					trekking: Math.random() / 10,
+					entertainment: Math.random() / 10
 				}
 			})
 		}
@@ -46,7 +48,7 @@ class UserController extends ResourceController{
 					for (let index = 0; index < count; index++) {
 						postFakeData.push({
 							author : user._id,
-							url: Faker.image.imageUrl(270, 480),
+							url: foodporn.posts[ Math.ceil(Math.random() * foodporn.posts.length)][0].url,
 							text: Faker.lorem.text(),
 							location: {
 								coordinates: [
@@ -55,12 +57,12 @@ class UserController extends ResourceController{
 								],
 							},
 							attributes: {
-								foodie: Math.random(),
-								religious: Math.random(),
-								thrilling: Math.random(),
-								chilling: Math.random(),
-								trekking: Math.random(),
-								entertainment: Math.random()
+								foodie: (Math.random() / 2)  + 0.5,
+								religious: Math.random() / 10,
+								thrilling: Math.random() / 10,
+								chilling: Math.random() / 10,
+								trekking: Math.random() / 10,
+								entertainment: Math.random() / 10
 							}
 						})
 					}
@@ -77,7 +79,8 @@ class UserController extends ResourceController{
 				})
 
 			})
-			.catch(() => {
+			.catch((err) => {
+				console.log(err)
 				done()
 				//res.status(400).json(err)
 			})

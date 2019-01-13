@@ -4,6 +4,6 @@ export default {
 			path: "author",
 			select: "name"
 		})
-		next()
+		return next()
 	}
 }

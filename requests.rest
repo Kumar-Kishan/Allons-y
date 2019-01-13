@@ -6,12 +6,29 @@
 @identity = identities
 @user = users
 
+
+###
+POST {{url}}login
+Content-Type: application/json
+
+{
+	"payload" : {
+		"type" : "social",
+		"social" : {
+			"provider" : "google",
+			"id" : "434738947"
+		}
+	}
+}
+
+
+
 ###
 GET {{url}}{{post}}/mock?count=10000
 
 
 ###
-//GET {{url}}{{user}}/mock?count=100
+GET {{url}}{{user}}/mock?count=20
 ###
 GET {{url}}{{post}}?skip=12&count=23
 

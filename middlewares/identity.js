@@ -15,6 +15,6 @@ export default{
 			address: ip,
 			accessTime: new Date(Date.now())
 		}]
-		next()
+		return next()
 	}
 }

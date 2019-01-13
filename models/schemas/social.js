@@ -5,6 +5,9 @@ let SocialSchema = Schema({
 		type: String,
 		enum: [ "facebook", "google", "twitter" ]
 	},
+	id: {
+		type: String
+	},
 	token: {
 		type: String
 	}

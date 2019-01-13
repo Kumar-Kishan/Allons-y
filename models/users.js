@@ -1,13 +1,15 @@
 import { Schema, model as Model } from "mongoose"
 import AttributeSchema from "./schemas/attributes"
 import SocialSchema from  "./schemas/social"
+import TokenSchema from "./schemas/token"
 
 let UserSchema = Schema({
 	name: {
 		type: String
 	},
 	email : {
-		type: String
+		type: String,
+		unique: true
 	},
 	password: {
 		type: String,
@@ -19,6 +21,7 @@ let UserSchema = Schema({
 	}],
 	socials : [SocialSchema],
 	attributes: AttributeSchema,
+	tokens: [TokenSchema],
 })
 
 export default Model("User", UserSchema, "users")
