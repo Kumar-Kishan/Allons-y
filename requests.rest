@@ -16,8 +16,10 @@ Content-Type: application/json
 		"type" : "social",
 		"social" : {
 			"provider" : "google",
-			"id" : "434738947"
-		}
+			"id" : "4347389478745"
+		},
+		"name" : "Kishan Kumar",
+		"email" : "kumar.kishasn@outlook.com"
 	}
 }
 
